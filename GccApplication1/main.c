@@ -2,6 +2,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+// Fundering, ändra alla coil funktioner till en array som PORTC får värde ifrån.
+
 int forward=1;
 void (*coil)();
 void coil1();
@@ -12,7 +14,6 @@ void coil3();
 void coil34();
 void coil4();
 void coil41();
-
 
 void coil1() {
 	PORTC = 0b00000001;
@@ -65,7 +66,7 @@ int main(void)
 		}
 		coil();
 		_delay_us(700);
-		
-		
+
+
 	}
 }
