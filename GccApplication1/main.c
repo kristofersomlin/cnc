@@ -2,6 +2,8 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+
+
 // Fundering, ändra alla coil funktioner till en array som PORTC får värde ifrån.
 
 struct stepper_motor {
