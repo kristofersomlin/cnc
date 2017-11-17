@@ -2,7 +2,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-int forward=0;
+int forward=1;
 void (*coil)();
 void coil1();
 void coil12();
@@ -16,6 +16,7 @@ void coil41();
 
 void coil1() {
 	PORTC = 0b00000001;
+	// if(forward) { coil = coil12; } else { coil = coil41; }
 	coil = forward ? coil12 : coil41;
 }
 void coil12() {
@@ -52,11 +53,19 @@ void coil41() {
 int main(void)
 {
 	DDRC |= 0xFF;
+	DDRB = 0x00;
+	PORTB = 0x01;
 	coil=coil1;
 	while (1)
 	{
-		
+		if((PINB & (1<<PB0)) == 0) {
+			forward=0;
+			} else {
+			forward=1;
+		}
 		coil();
 		_delay_us(700);
+		
+		
 	}
 }
