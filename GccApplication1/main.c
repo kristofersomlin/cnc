@@ -32,6 +32,9 @@ void stepper_move(int stepper) {
 	if(stepper==0){
 		PORTC = stepper_motors[stepper].stepper_values[stepper_motors[stepper].stepper_movement];
 	}
+	else if (stepper==1) {
+		PORTB = stepper_motors[stepper].stepper_values[stepper_motors[stepper].stepper_movement];
+	}
 }
 
 void button_check() {
@@ -42,15 +45,16 @@ void button_check() {
 	}
 }
 
-int main(void)
-{
+int main(void) {
 	DDRC |= 0xFF;
-	DDRB = 0x00;
-	PORTB = 0x01;
+	DDRB |= 0xFF;
+	//PORTB = 0x01;
+
 	while (1)
 	{
 		button_check();
 		stepper_move(0);
+		stepper_move(1);
 		_delay_us(700);
 	}
 }
