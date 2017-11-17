@@ -34,6 +34,14 @@ void stepper_move(int stepper) {
 	}
 }
 
+void button_check() {
+	if((PINB & (1<<PB0)) == 0) {
+		stepper_motors[0].forward=0;
+		} else {
+		stepper_motors[0].forward=1;
+	}
+}
+
 int main(void)
 {
 	DDRC |= 0xFF;
@@ -41,11 +49,7 @@ int main(void)
 	PORTB = 0x01;
 	while (1)
 	{
-		if((PINB & (1<<PB0)) == 0) {
-			stepper_motors[0].forward=0;
-			} else {
-			stepper_motors[0].forward=1;
-		}
+		button_check();
 		stepper_move(0);
 		_delay_us(700);
 	}
