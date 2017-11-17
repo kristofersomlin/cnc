@@ -14,13 +14,6 @@ struct stepper_motor {
 };
 
 
-/*
-int stepper_motor[2][8] = {
-	{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001} ,
-	{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001}
-};
-*/
-
 // Ändra denna funktion till en int som returnerar 1 om den funkar och 0 om det blir fel?!?!?!?!?
 void stepper_move(int stepper) {
 	if(stepper_motors[stepper].forward) {
@@ -46,9 +39,6 @@ int main(void)
 	DDRC |= 0xFF;
 	DDRB = 0x00;
 	PORTB = 0x01;
-	// Variable to set movement of the stepper motor.
-	//int forward[2]={1,1};
-	//int stepper_movement=0;
 	while (1)
 	{
 		if((PINB & (1<<PB0)) == 0) {
@@ -56,12 +46,7 @@ int main(void)
 			} else {
 			stepper_motors[0].forward=1;
 		}
-
-
 		stepper_move(0);
-
 		_delay_us(700);
-
-
 	}
 }
