@@ -28,9 +28,8 @@ int main(void)
     {
 		
 		OCR1A = ICR1 - 2600;
-		_delay_ms(2100);
+		_delay_ms(2200);
 		OCR1A = ICR1 - 1500;//2500
 		_delay_ms(2000);
     }
 }
-
