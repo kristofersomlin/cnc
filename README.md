@@ -1,4 +1,4 @@
-# TODO!
+## TODO!
 
 - [x] Lägga in alla värden i en struct
 - [ ] Lägga till knapp för att välja framåt eller bakåt
@@ -7,8 +7,14 @@
 - [ ] Bygga en ställning för hela maskinen
 
 
-# Pinnar som används:
-```
-- PC0, PC1, PC2, PC3 = H-BRYGGA för stepper motor 1
+## Pinnar som används:
+PORTC.
+  - PC0
+    - H-BRYGGA för stepper motor 1
+  - PC1
+    - H-BRYGGA för stepper motor 1
+  - PC2
+    - H-BRYGGA för stepper motor 1
+  - PC3
+    - H-BRYGGA för stepper motor 1
 - PB0, PB1, PB2, PB3 = H-BRYGGA för stepper motor 2
-```
