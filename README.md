@@ -8,6 +8,7 @@
 
 
 ## Pinnar som används:
+| :--- | :--- |
 | PORT | Beskrivning |
 | --- | --- |
 | PC0 | H-BRYGGA för stepper motor 1 |
