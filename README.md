@@ -6,7 +6,9 @@
 - [ ] Hitta ett sätt att kunna läsa in bilder/texter för att sedan översätta och skriva ut dem med CNC maskinen
 - [ ] Bygga en ställning för hela maskinen
 
----
+
+
+
 
 ## Pinnar som används:
 
@@ -37,12 +39,18 @@
 | GND | H-BRYGGA FÖR STEPPER MOTOR 1 (GND x4) |
 | GND | H-BRYGGA FÖR STEPPER MOTOR 2 (GND x4) |
 
----
+
+
+
 
 ## Hårdvara
 - [Nema 17](http://reprap.org/wiki/NEMA_17_Stepper_motor)
 - [SN754410](http://www.ti.com/lit/ds/symlink/sn754410.pdf)
 - [Atmega 328p](http://www.atmel.com/images/Atmel-8271-8-bit-AVR-Microcontroller-ATmega48A-48PA-88A-88PA-168A-168PA-328-328P_datasheet_Complete.pdf)
+
+
+
+
 
 ---
 
