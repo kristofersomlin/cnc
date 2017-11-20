@@ -6,6 +6,7 @@
 - [ ] Hitta ett sätt att kunna läsa in bilder/texter för att sedan översätta och skriva ut dem med CNC maskinen
 - [ ] Bygga en ställning för hela maskinen
 
+---
 
 ## Pinnar som används:
 
@@ -35,6 +36,8 @@
 | VCC | H-BRYGGA FÖR STEPPER MOTOR 2 (12EN, VCC1, 34EN) |
 | GND | H-BRYGGA FÖR STEPPER MOTOR 1 (GND x4) |
 | GND | H-BRYGGA FÖR STEPPER MOTOR 2 (GND x4) |
+
+---
 
 ## Hårdvara
 - [Nema 17](http://reprap.org/wiki/NEMA_17_Stepper_motor)
