@@ -29,8 +29,9 @@ void stepper_move(int stepper) {
 	}
 		// Setting PORTB / PORTC to the value depending on what stepper is used.
 		*stepper_motors[stepper].port = stepper_motors[stepper].stepper_values[stepper_motors[stepper].stepper_movement];
+		//PORTC = stepper_motors[stepper].stepper_values[stepper_motors[stepper].stepper_movement];
 }
-
+/*
 void button_check() {
 	if((PINB & (1<<PB0)) == 0) {
 		stepper_motors[0].forward=0;
@@ -38,7 +39,7 @@ void button_check() {
 		stepper_motors[0].forward=1;
 	}
 }
-
+*/
 int main(void) {
 	DDRC |= 0xFF;
 	DDRB |= 0xFF;
@@ -46,9 +47,11 @@ int main(void) {
 
 	while (1)
 	{
-		button_check();
+		//button_check();
 		stepper_move(0);
-		stepper_move(1);
-		_delay_us(700);
+// 		_delay_us(700);
+ 		stepper_move(1);
+		_delay_us(90);
+	
 	}
 }
