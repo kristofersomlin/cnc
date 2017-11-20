@@ -8,14 +8,16 @@
 
 
 ## Pinnar som används:
-  - PC0 - H-BRYGGA för stepper motor 1
-  - PC1 - H-BRYGGA för stepper motor 1
-  - PC2 - H-BRYGGA för stepper motor 1
-  - PC3 - H-BRYGGA för stepper motor 1
-  - PB0 - H-BRYGGA för stepper motor 2
-  - PB1 - H-BRYGGA för stepper motor 2
-  - PB2 - H-BRYGGA för stepper motor 2
-  - PB3 - H-BRYGGA för stepper motor 2
+| PORT | Beskrivning |
+| --- | --- |
+| PC0 | H-BRYGGA för stepper motor 1 |
+| PC1 | H-BRYGGA för stepper motor 1 |
+| PC2 | H-BRYGGA för stepper motor 1 |
+| PC3 | H-BRYGGA för stepper motor 1 |
+| PB0 | H-BRYGGA för stepper motor 2 |
+| PB1 | H-BRYGGA för stepper motor 2 |
+| PB2 | H-BRYGGA för stepper motor 2 |
+| PB3 | H-BRYGGA för stepper motor 2 |
 
 
 ## Hårdvara
