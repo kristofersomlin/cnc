@@ -11,15 +11,30 @@
 
 | PORT | Beskrivning |
 | :--- | :--- |
-| PC0 | H-BRYGGA för stepper motor 1 |
-| PC1 | H-BRYGGA för stepper motor 1 |
-| PC2 | H-BRYGGA för stepper motor 1 |
-| PC3 | H-BRYGGA för stepper motor 1 |
-| PB0 | H-BRYGGA för stepper motor 2 |
-| PB1 | H-BRYGGA för stepper motor 2 |
-| PB2 | H-BRYGGA för stepper motor 2 |
-| PB3 | H-BRYGGA för stepper motor 2 |
-
+| PC0 | H-BRYGGA för stepper motor 1 (2A) |
+| PC1 | H-BRYGGA för stepper motor 1 (3A) |
+| PC2 | H-BRYGGA för stepper motor 1 (1A) |
+| PC3 | H-BRYGGA för stepper motor 1 (4A) |
+| PC4 | |
+| PC5 | |
+| PB0 | H-BRYGGA för stepper motor 2 (2A) |
+| PB1 | H-BRYGGA för stepper motor 2 (3A) |
+| PB2 | H-BRYGGA för stepper motor 2 (1A) |
+| PB3 | H-BRYGGA för stepper motor 2 (4A) |
+| PB4 | |
+| PB5 | |
+| PD0 | |
+| PD1 | |
+| PD2 | |
+| PD3 | |
+| PD4 | |
+| PD5 | |
+| PD6 | |
+| PD7 | |
+| VCC | H-BRYGGA FÖR STEPPER MOTOR 1 (12EN, VCC1, 34EN) |
+| VCC | H-BRYGGA FÖR STEPPER MOTOR 2 (12EN, VCC1, 34EN) |
+| GND | H-BRYGGA FÖR STEPPER MOTOR 1 (GND x4) |
+| GND | H-BRYGGA FÖR STEPPER MOTOR 2 (GND x4) |
 
 ## Hårdvara
 - [Nema 17](http://reprap.org/wiki/NEMA_17_Stepper_motor)
