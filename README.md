@@ -51,8 +51,5 @@
 
 
 
-
----
-
-### Andra användbara länkar
+## Andra användbara länkar
 [How do I pass an IO port as a parameter to a function?](http://www.atmel.com/webdoc/avrlibcreferencemanual/FAQ_1faq_port_pass.html)
