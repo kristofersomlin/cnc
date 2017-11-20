@@ -1,10 +1,13 @@
 # TODO!
-- Lägga till knapp för att välja framåt eller bakåt
-- Implementera funktion för servo motor i main programmet
-- Hitta ett sätt att kunna läsa in bilder/texter för att sedan översätta och skriva ut dem med CNC maskinen
-- Bygga en ställning för hela maskinen
+```
+- LÃ¤gga till knapp fÃ¶r att vÃ¤lja framÃ¥t eller bakÃ¥t
+- Implementera funktion fÃ¶r servo motor i main programmet
+- Hitta ett sÃ¤tt att kunna lÃ¤sa in bilder/texter fÃ¶r att sedan Ã¶versÃ¤tta och skriva ut dem med CNC maskinen
+- Bygga en stÃ¤llning fÃ¶r hela maskinen
+```
 
-
-# Pinnar som används:
-- PC0, PC1, PC2, PC3 = H-BRYGGA för stepper motor 1
-- PB0, PB1, PB2, PB3 = H-BRYGGA för stepper motor 2
+# Pinnar som anvÃ¤nds:
+```
+- PC0, PC1, PC2, PC3 = H-BRYGGA fÃ¶r stepper motor 1
+- PB0, PB1, PB2, PB3 = H-BRYGGA fÃ¶r stepper motor 2
+```
