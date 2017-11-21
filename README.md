@@ -44,7 +44,7 @@
 
 
 ## Hårdvara
-- [Nema 17](http://reprap.org/wiki/NEMA_17_Stepper_motor)
+- [Nema 17 17HS19-2004S1](http://reprap.org/wiki/NEMA_17_Stepper_motor)
 - [SN754410](http://www.ti.com/lit/ds/symlink/sn754410.pdf)
 - [Atmega 328p](http://www.atmel.com/images/Atmel-8271-8-bit-AVR-Microcontroller-ATmega48A-48PA-88A-88PA-168A-168PA-328-328P_datasheet_Complete.pdf)
 
