@@ -520,9 +520,9 @@ END GROUP
  .debug_str     0x00000208      0x20c main.o
                                 0x240 (size before relaxing)
 
-.debug_loc      0x00000000      0x23e
+.debug_loc      0x00000000      0x240
  *(.debug_loc)
- .debug_loc     0x00000000      0x23e main.o
+ .debug_loc     0x00000000      0x240 main.o
 
 .debug_macinfo
  *(.debug_macinfo)

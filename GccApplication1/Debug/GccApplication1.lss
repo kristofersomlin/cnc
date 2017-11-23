@@ -23,9 +23,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
   9 .debug_str    00000414  00000000  00000000  00001b04  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000023e  00000000  00000000  00001f18  2**0
+ 10 .debug_loc    00000240  00000000  00000000  00001f18  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000048  00000000  00000000  00002156  2**0
+ 11 .debug_ranges 00000048  00000000  00000000  00002158  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -335,14 +335,14 @@ int main(void)
 		for(int i=0;i<pwm_timer;i++) {
 			_delay_us(1);
 		}
-	//	PORTC = 0b00000000;
+
 		for(int i=0;i<max_pwm-pwm_timer;i++) {
  206:	00 ef       	ldi	r16, 0xF0	; 240
  208:	10 e0       	ldi	r17, 0x00	; 0
 		if(maxmovement>400) {
 			PORTC = 0b00000000;
 			PORTB = 0b00000000;
-			_delay_ms(5000);
+			_delay_ms(600);
 			maxmovement=0;
 			inc_procent=0.2;
  20a:	0f 2e       	mov	r0, r31
@@ -376,7 +376,7 @@ int main(void)
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 230:	22 e0       	ldi	r18, 0x02	; 2
+ 230:	2a e0       	ldi	r18, 0x0A	; 10
  232:	2a 95       	dec	r18
  234:	f1 f7       	brne	.-4      	; 0x232 <main+0x6e>
  236:	00 c0       	rjmp	.+0      	; 0x238 <main+0x74>
@@ -386,7 +386,7 @@ int main(void)
  23e:	c1 f7       	brne	.-16     	; 0x230 <main+0x6c>
 			_delay_us(1);
 		}
-	//	PORTC = 0b00000000;
+
 		for(int i=0;i<max_pwm-pwm_timer;i++) {
  240:	98 01       	movw	r18, r16
  242:	28 19       	sub	r18, r8
@@ -396,7 +396,7 @@ int main(void)
  24a:	54 f4       	brge	.+20     	; 0x260 <main+0x9c>
  24c:	80 e0       	ldi	r24, 0x00	; 0
  24e:	90 e0       	ldi	r25, 0x00	; 0
- 250:	42 e0       	ldi	r20, 0x02	; 2
+ 250:	4a e0       	ldi	r20, 0x0A	; 10
  252:	4a 95       	dec	r20
  254:	f1 f7       	brne	.-4      	; 0x252 <main+0x8e>
  256:	00 c0       	rjmp	.+0      	; 0x258 <main+0x94>
@@ -482,15 +482,15 @@ int main(void)
 
 	__builtin_avr_delay_cycles(__ticks_dc);
  2d6:	2f ef       	ldi	r18, 0xFF	; 255
- 2d8:	41 e1       	ldi	r20, 0x11	; 17
- 2da:	8a e7       	ldi	r24, 0x7A	; 122
+ 2d8:	47 e9       	ldi	r20, 0x97	; 151
+ 2da:	8a e3       	ldi	r24, 0x3A	; 58
  2dc:	21 50       	subi	r18, 0x01	; 1
  2de:	40 40       	sbci	r20, 0x00	; 0
  2e0:	80 40       	sbci	r24, 0x00	; 0
  2e2:	e1 f7       	brne	.-8      	; 0x2dc <main+0x118>
  2e4:	00 c0       	rjmp	.+0      	; 0x2e6 <main+0x122>
  2e6:	00 00       	nop
-			_delay_ms(5000);
+			_delay_ms(600);
 			maxmovement=0;
 			inc_procent=0.2;
  2e8:	fb 2c       	mov	r15, r11
@@ -501,7 +501,7 @@ int main(void)
 		if(maxmovement>400) {
 			PORTC = 0b00000000;
 			PORTB = 0b00000000;
-			_delay_ms(5000);
+			_delay_ms(600);
 			maxmovement=0;
  2f0:	c0 e0       	ldi	r28, 0x00	; 0
  2f2:	d0 e0       	ldi	r29, 0x00	; 0

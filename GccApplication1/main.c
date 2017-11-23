@@ -1,4 +1,4 @@
-#define F_CPU 8000000
+#define F_CPU 32000000
 #include <avr/io.h>
 #include <util/delay.h>
 
@@ -9,9 +9,10 @@ struct stepper_motor
 	int stepper_movement;
 	volatile uint8_t *port;
 } stepper_motors[2] = {
-	//{{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC},
 	{{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001},1,0,&PORTC},
-	{{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001},1,0,&PORTB}
+	{{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001},1,0,&PORTB},
+	//{{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC},
+	//{{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC}
 };
 
 // Ändra denna funktion till en int som returnerar 1 om den funkar och 0 om det blir fel?!?!?!?!?
@@ -63,6 +64,7 @@ int main(void)
 
 
 
+// STEPPER SKA HA PWM!
 
 
 
@@ -71,7 +73,7 @@ int main(void)
 		for(int i=0;i<pwm_timer;i++) {
 			_delay_us(1);
 		}
-	//	PORTC = 0b00000000;
+
 		for(int i=0;i<max_pwm-pwm_timer;i++) {
 			_delay_us(1);
 		}
@@ -91,7 +93,7 @@ int main(void)
 		if(maxmovement>400) {
 			PORTC = 0b00000000;
 			PORTB = 0b00000000;
-			_delay_ms(5000);
+			_delay_ms(600);
 			maxmovement=0;
 			inc_procent=0.2;
 		}
