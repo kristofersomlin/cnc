@@ -48,6 +48,8 @@ void stepper_move(int stepper)
 int main(void)
 {
 
+	int max_pwm=240;
+
 	DDRC |= 0xFF;
 	DDRB |= 0xFF;
 	int pwm_timer=0;
@@ -65,11 +67,12 @@ int main(void)
 
 
 		stepper_move(0);
+		stepper_move(1);
 		for(int i=0;i<pwm_timer;i++) {
 			_delay_us(1);
 		}
 	//	PORTC = 0b00000000;
-		for(int i=0;i<240-pwm_timer;i++) {
+		for(int i=0;i<max_pwm-pwm_timer;i++) {
 			_delay_us(1);
 		}
 		
@@ -77,17 +80,18 @@ int main(void)
 		if (maxmovement<100) {
 			inc_procent+=0.01;
 			//timershitbalaha++;
-			pwm_timer=(int)(inc_procent*232);
+			pwm_timer=(int)(inc_procent*(max_pwm*0.96));
 		}
 
 		if(maxmovement>300) {
 			inc_procent-=0.01;
 			//timershitbalaha++;
-			pwm_timer=(int)(inc_procent*232);
+			pwm_timer=(int)(inc_procent*(max_pwm*0.96));
 		}
 		if(maxmovement>400) {
 			PORTC = 0b00000000;
-			_delay_ms(1000);
+			PORTB = 0b00000000;
+			_delay_ms(5000);
 			maxmovement=0;
 			inc_procent=0.2;
 		}
