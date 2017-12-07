@@ -11,8 +11,8 @@ struct stepper_motor
 } stepper_motors[2] = {
 	{{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001},1,0,&PORTC},
 	{{0b00000001,0b00000011,0b00000010,0b00000110,0b00000100,0b00001100,0b00001000,0b00001001},1,0,&PORTB},
-	//{{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC},
-	//{{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC}
+	// För full stepping {{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC},
+	// För full stepping {{0b00000011,0b00000110,0b00001100,0b00001001},1,0,&PORTC}
 };
 
 // Ändra denna funktion till en int som returnerar 1 om den funkar och 0 om det blir fel?!?!?!?!?
@@ -49,7 +49,7 @@ void stepper_move(int stepper)
 int main(void)
 {
 
-	int max_pwm=240;
+	int max_pwm=400;
 
 	DDRC |= 0xFF;
 	DDRB |= 0xFF;
@@ -58,49 +58,35 @@ int main(void)
 	double inc_procent=0.2;
 	while (1)
 	{
-		
- 		//stepper_move(1);
-		//_delay_us(90);
-
-
-
 // STEPPER SKA HA PWM!
-
-
-
+	for (int i=250;i>150;i--) {
 		stepper_move(0);
-		stepper_move(1);
-		for(int i=0;i<pwm_timer;i++) {
+		_delay_us(20);
+		PORTB = 0b00000000;
+		for(int x=0;x<i;x++){
 			_delay_us(1);
 		}
+	}
 
-		for(int i=0;i<max_pwm-pwm_timer;i++) {
+	for(int i=0;i<3800;i++) {
+		stepper_move(0);
+		_delay_us(20);
+		PORTB = 0b00000000;
+		_delay_us(150);
+	}
+	for (int i=150;i<250;i++) {
+		stepper_move(0);
+		_delay_us(20);
+		PORTB = 0b00000000;
+		for(int x=0;x<i;x++){
 			_delay_us(1);
 		}
-		
-		
-		if (maxmovement<100) {
-			inc_procent+=0.01;
-			//timershitbalaha++;
-			pwm_timer=(int)(inc_procent*(max_pwm*0.96));
-		}
+	}
+	_delay_ms(3000);
 
-		if(maxmovement>300) {
-			inc_procent-=0.01;
-			//timershitbalaha++;
-			pwm_timer=(int)(inc_procent*(max_pwm*0.96));
-		}
-		if(maxmovement>400) {
-			PORTC = 0b00000000;
-			PORTB = 0b00000000;
-			_delay_ms(600);
-			maxmovement=0;
-			inc_procent=0.2;
-		}
-maxmovement++;
-		
+
 		//	stepper_motors[0].forward=1;
-		
+
 
 	}
 }
